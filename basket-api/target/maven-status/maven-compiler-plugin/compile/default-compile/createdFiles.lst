@@ -1,0 +1,5 @@
+com\knoldus\basketcrud\basket\api\Basket.class
+com\knoldus\basketcrud\basket\api\BasketService.class
+com\knoldus\basketcrud\basket\api\Basket$BasketBuilder.class
+com\knoldus\basketcrud\basket\api\Item.class
+com\knoldus\basketcrud\basket\api\Item$ItemBuilder.class
