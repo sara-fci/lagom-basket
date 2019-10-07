@@ -32,7 +32,7 @@ public class BasketEntity extends PersistentEntity<BasketCommand, BasketEvent, B
 
         behaviorBuilder.setCommandHandler(CreateBasket.class, (cmd, ctx) ->
                 ctx.thenPersist(BasketCreated.builder().basket(cmd.getBasket())
-                        .entityId(entityId()).build(), evt -> ctx.reply(Done.getInstance()))
+                        .entityUuid(entityId()).build(), evt -> ctx.reply(Done.getInstance()))
         );
 
         behaviorBuilder.setEventHandler(BasketCreated.class, evt ->
@@ -41,7 +41,7 @@ public class BasketEntity extends PersistentEntity<BasketCommand, BasketEvent, B
         );
 
         behaviorBuilder.setCommandHandler(UpdateBasket.class, (cmd, ctx) ->
-                ctx.thenPersist(BasketUpdated.builder().basket(cmd.getBasket()).entityId(entityId()).build()
+                ctx.thenPersist(BasketUpdated.builder().basket(cmd.getBasket()).entityUuid(entityId()).build()
                         , evt -> ctx.reply(Done.getInstance()))
         );
 
@@ -51,7 +51,7 @@ public class BasketEntity extends PersistentEntity<BasketCommand, BasketEvent, B
         );
 
         behaviorBuilder.setCommandHandler(DeleteBasket.class, (cmd, ctx) ->
-                ctx.thenPersist(BasketDeleted.builder().basket(cmd.getBasket()).entityId(entityId()).build(),
+                ctx.thenPersist(BasketDeleted.builder().basket(cmd.getBasket()).entityUuid(entityId()).build(),
                         evt -> ctx.reply(cmd.getBasket()))
         );
 

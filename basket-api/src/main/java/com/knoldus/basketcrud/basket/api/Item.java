@@ -14,6 +14,6 @@ import lombok.Value;
 public class Item implements Jsonable {
     String uuid;
     int quantity;
-	int price;
-	String basketUuid;
+    int price;
+    String basketUuid;
 }

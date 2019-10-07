@@ -51,7 +51,7 @@ public class BasketEventProcessor extends ReadSideProcessor<BasketEvent> {
         LOGGER.info(" buildHandler method ... ");
         return readSide.<BasketEvent>builder("baskets_offset")
                 .setGlobalPrepare(this::createTable)
-                .setPrepare(evtTag -> prepareWriteBasket().thenCompose(a->prepareWriteItem())
+                .setPrepare(evtTag -> prepareWriteBasket()
                         .thenCombine(prepareDeleteBasket(), (d1, d2) -> Done.getInstance())
                 )
                 .setEventHandler(BasketCreated.class, this::processPostAdded)

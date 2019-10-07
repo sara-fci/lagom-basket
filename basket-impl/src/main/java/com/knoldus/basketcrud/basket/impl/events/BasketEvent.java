@@ -25,7 +25,7 @@ public interface BasketEvent extends Jsonable, AggregateEvent<BasketEvent> {
     @JsonDeserialize
     final class BasketCreated implements BasketEvent, CompressedJsonable {
         Basket basket;
-        String entityId;
+        String entityUuid;
         // List<Role> roles;
     }
 
@@ -34,7 +34,7 @@ public interface BasketEvent extends Jsonable, AggregateEvent<BasketEvent> {
     @JsonDeserialize
     final class BasketUpdated implements BasketEvent, CompressedJsonable {
         Basket basket;
-        String entityId;
+        String entityUuid;
         // List<Role> roles;
     }
 
@@ -43,6 +43,6 @@ public interface BasketEvent extends Jsonable, AggregateEvent<BasketEvent> {
     @JsonDeserialize
     final class BasketDeleted implements BasketEvent, CompressedJsonable {
         Basket basket;
-        String entityId;
+        String entityUuid;
     }
 }
