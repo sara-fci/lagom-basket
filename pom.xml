@@ -23,7 +23,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit>4.12</junit>
+        <junit>4.13.1</junit>
         <jdk.version>1.8</jdk.version>
         <lagom.version>1.2.0</lagom.version>
         <play.version>2.5.4</play.version>
